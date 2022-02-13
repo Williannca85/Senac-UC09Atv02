@@ -1,61 +1,63 @@
 import React from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Gaming from '../../assets/gaming.svg';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import LinearGradient from 'react-native-linear-gradient';
+import CartScreen from './CartScreen';
+
 
 const OnboardingScreen = ({navigation}) => {
+ 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-      }}>
-      <View style={{marginTop: 20}}>
-        <Text
-          style={{
-            fontFamily: 'Inter-Bold',
-            fontWeight: 'bold',
-            fontSize: 30,
-            color: '#20315f',
-          }}>
-          GAMEON
-        </Text>
-      </View>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Gaming
-          width={300}
-          height={300}
-          style={{transform: [{rotate: '-15deg'}]}}
-        />
-      </View>
-      <TouchableOpacity
+
+      <LinearGradient 
         style={{
-          backgroundColor: '#AD40AF',
-          padding: 20,
-          width: '90%',
-          borderRadius: 10,
-          marginBottom: 50,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
+        height: '100%', 
+        width: '100%', 
         }}
-        onPress={() => navigation.navigate('Login')}>
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 18,
-            textAlign: 'center',
-            fontWeight: 'bold',
-            fontFamily: 'Roboto-MediumItalic',
-          }}>
-          Let's Begin
-        </Text>
-        <MaterialIcons name="arrow-forward-ios" size={22} color="#fff" />
+
+        start={{x:0,y:1}}
+        end={{x:1,y:0}}
+          locations={[.5,1,1.5]}
+        colors={['#d5a5c5','#f9ccba','#94d7ee']}>
+
+    <SafeAreaView style={{flex:1 , justifyContent: 'center', alignItems: 'center'}}>
+
+    <View>
+     <Text style={{
+       fontSize: 40, 
+       color:'#21315f', 
+       fontFamily: 'Poppins-MediumItalic',
+
+      }}>
+          BaZzAaR
+      </Text>
+    </View>
+   
+
+      <TouchableOpacity 
+      style={{
+        backgroundColor:'#ad40af', 
+        padding:10, 
+        width: '90%', 
+        borderRadius:10, 
+        flexDirection: 'row', 
+        justifyContent: 'space-between',
+        }}>
+
+            <Text
+            style={{
+              fontSize:30, 
+              color:'#ffffff',
+              fontFamily: 'Poppins-MediumItalic'
+            }}>
+              Vamos as Compras</Text>
+              <Icon name="shopping-cart" size={35} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>
-  );
-};
+  </LinearGradient>
+  )
+
+}
 
 export default OnboardingScreen;

@@ -1,24 +1,43 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+
+
+import {createStackNavigator} from '@react-navigation/stack'; 
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import CustomDrawer from '../components/CustomDrawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Material from 'react-native-vector-icons/MaterialIcons';
 
+import OnboardingScreen from '../Pages/OnboardingScreen'
 import ProfileScreen from '../Pages/ProfileScreen';
-import MessagesScreen from '../Pages/MessagesScreen';
-import MomentsScreen from '../Pages/MomentsScreen';
+import CategoryScreen from '../Pages/CategoryScreen';
+import PagamentosScreen from '../Pages/PagamentosScreen';
 import SettingsScreen from '../Pages/SettingsScreen';
+import CardScreen from '../Pages/CardScreen';
+
+import LinearGradient from 'react-native-linear-gradient';
 
 import TabNavigator from './TabNavigator';
-import Categorias from '../Pages/Categorias';
 
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const AuthStack = () => {
   return (
+
+    <LinearGradient 
+        style={{
+        height: '100%', 
+        width: '100%', 
+        }}
+
+        start={{x:0,y:1}}
+        end={{x:1,y:0}}
+          locations={[.5,1,1.5]}
+        colors={['#d5a5c5','#f9ccba','#94d7ee']}>
     <Drawer.Navigator
-      drawerContent={props => <CustomDrawer {...props} />}
+      drawerContent={props => <CustomDrawer {...props} />} 
       screenOptions={{
         headerShown: false,
         drawerActiveBackgroundColor: '#0e105cab',
@@ -30,6 +49,16 @@ const AuthStack = () => {
           fontSize: 15,
         },
       }}>
+
+{/* <Drawer.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{
+          drawerIcon: ({color}) => (
+        <Ionicons name="home-outline" size={22} color={color} />
+          ),
+        }}
+      />   */}
       <Drawer.Screen
         name="Home"
         component={TabNavigator}
@@ -39,6 +68,7 @@ const AuthStack = () => {
           ),
         }}
       />
+
       <Drawer.Screen
         name="Perfil"
         component={ProfileScreen}
@@ -50,19 +80,28 @@ const AuthStack = () => {
       />
       <Drawer.Screen
         name="Categorias"
-        component={MessagesScreen}
+        component={CategoryScreen}
         options={{
           drawerIcon: ({color}) => (
-            <Ionicons name="chatbox-ellipses-outline" size={22} color={color} />
+            <Material name="category" size={22} color={color} />
           ),
         }}
       />
       <Drawer.Screen
         name="Pagamentos"
-        component={MomentsScreen}
+        component={PagamentosScreen}
         options={{
           drawerIcon: ({color}) => (
-            <Ionicons name="timer-outline" size={22} color={color} />
+            <Ionicons name="cart-outline" size={22} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Cartões"
+        component={CardScreen}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons name="card-outline" size={22} color={color} />
           ),
         }}
       />
@@ -76,7 +115,12 @@ const AuthStack = () => {
         }}
       />
     </Drawer.Navigator>
+    </LinearGradient>
   );
 };
 
+
+
 export default AuthStack;
+
+

@@ -20,6 +20,8 @@ import {Novidades, Promocoes, sliderData} from '../../src/model/data';
 import CustomSwitch from '../components/CustomSwitch'; 
 import ListItem from '../components/ListItem'; 
 
+
+
 export default function HomeScreen ({navigation}) {
 
      const [botaoTab, setbotaoTab] = useState(1);
@@ -34,21 +36,20 @@ export default function HomeScreen ({navigation}) {
 
      return(
       
+      <LinearGradient 
+      style={{
+      height: '100%', 
+      width: '100%', 
+      }}
+
+      start={{x:0,y:1}}
+      end={{x:1,y:0}}
+        locations={[.5,1,1.5]}
+      colors={['#d5a5c5','#f9ccba','#94d7ee']}>
           
-          
-          <SafeAreaView style={{flex: 1, backgroundColor: '#999999'}}>
+          <SafeAreaView style={{flex: 1, /* backgroundColor: '#999999' */}}>
                <ScrollView style={{padding: 20}}>
 
-{/*                <LinearGradient
-                             style={{
-                                  height: '100%', 
-                                  width: '100%', 
-                                  }} 
-                   
-                             start={{x:0,y:0.5}}
-                             end={{x:0.5,y:0}}
-                             locations={[.5,1]}
-                                  colors={['#d5a5c5','#f9ccba','#94d7ee']}> */}
                <View
                      style={{
                          flexDirection: 'row',
@@ -67,21 +68,20 @@ export default function HomeScreen ({navigation}) {
                          </TouchableOpacity>
                </View>
 
-                    <View><Text></Text></View>
 
                           {/*  Pesquisar Produto  */}
                 <View 
                          style={{
                               flexDirection:'row', 
-                              borderColor:'#94d7ee', 
+                              borderColor:'#0aada8aa', 
                               borderWidth: 1,
-                              borderRadius: 8,
+                              borderRadius: 50,
                               paddingHorizontal: 10,
-                              paddingVertical: 8,
+                              paddingVertical: 2,
                               }}>
                               <Feather 
-                              name="search" size={35} color={"#f9ccbaff"} style={{marginRight: 10}}/>
-                              <TextInput placeholder='Search' fontSize = {18} color={"#0e105cab"} />
+                              name="search" size={30} color={"#8200d6ff"} style={{marginRight: 15}}/>
+                              <TextInput placeholder='Search' color={"#0e105cff"} />
                </View>
 
                       <View><Text></Text></View>
@@ -163,8 +163,8 @@ export default function HomeScreen ({navigation}) {
               }
             />
           ))}
-{/*           </LinearGradient>  */}
       </ScrollView>
     </SafeAreaView>
+    </LinearGradient>
   );
 }

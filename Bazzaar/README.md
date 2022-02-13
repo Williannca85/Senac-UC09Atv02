@@ -1,6 +1,2 @@
-# Senac-UC14Atv02
-
-Projeto Integrador - Projeto feito em React Nativo
- 
-Projeto Bazzaar   
-
+# Bazzaar
+Projeto Bazzaar - Projeto feito em React Native
