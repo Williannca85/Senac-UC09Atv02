@@ -1,0 +1,15 @@
+Contexto
+Seguindo com o desenvolvimento do aplicativo mobile, após elaborar o projeto e preparar o ambiente de desenvolvimento, é hora de programar. Revise os requisitos e as características do projeto e implemente telas e principais funcionalidades do software utilizando React Native.
+ 
+Atividade
+Selecione ao menos três das principais funcionalidades descritas no documento de projeto para o aplicativo e destaque-as em um documento de texto (TXT, DOC, DOCX ou PDF). Implemente as funcionalidades citadas, utilizando React Native para montar as telas e desenvolver a lógica, com banco de dados local, caso necessário. Realize os testes utilizando emuladores ou aparelhos mobile.
+ 
+
+Entrega
+Entregue em um arquivo compactado (ZIP, RAR ou 7z) o projeto React Native no local destinado para tal.
+ 
+Avaliação
+Nesta atividade, você será avaliado nos indicadores:
+Elabora síntese do Projeto Integrador, respondendo às especificações do tema gerador.
+Apresenta os resultados do Projeto Integrador com coerência, coesão e criatividade, propondo soluções inovadoras, a partir da visão crítica da atuação profissional no segmento.
+Articula as com
